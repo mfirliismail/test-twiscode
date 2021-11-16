@@ -1,0 +1,17 @@
+CREATE TABLE transaction (
+    id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    tanggal_order date(),
+    status_pelunasan varchar(255),
+    tanggal_pembayaran date(),
+)
+
+CREATE TABLE detail_transaction (
+    id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_transaksi int(11)
+    harga int(11)
+    jumlah  int(11)
+    subtotal int
+)
+
+SELECT * FROM detail_transaction
+RIGHT JOIN transaction ON detail_transaction.id_transaksi = transaction.id 
